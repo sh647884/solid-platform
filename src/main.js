@@ -1,0 +1,15 @@
+let effect = VANTA.NET({
+    el: "#background",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.0,
+    minWidth: 200.0,
+    scale: 1.0,
+    scaleMobile: 1.0,
+    color: 0xaee370,
+    backgroundColor: 0xfcf8f1,
+    points: 20.0,
+    maxDistance: 27.0,
+    spacing: 17.0,
+  });  
