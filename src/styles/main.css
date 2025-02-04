@@ -100,3 +100,136 @@ h1:hover {
   padding-bottom: 0px;
   outline: 0;
 }
+
+#btnBack {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+#btnBack svg {
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+#btnBack:hover svg {
+  transform: scale(1.1);
+  filter: drop-shadow(0px 4px 10px rgb(255, 255, 255));
+}
+
+/* Boutons du Quizz */
+#quizOptions {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+#difficultyOptions {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5%;
+  gap: 50px;
+}
+
+/* Facile - Vert */
+#btnEasy {
+  align-items: center;
+  appearance: none;
+  background-color: #e8f5e9;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: #4caf50;
+  box-shadow: rgba(76, 175, 80, 0.2) 0 2px 4px, rgba(76, 175, 80, 0.15) 0 7px 13px -3px, #c8e6c9 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #2e7d32;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono", monospace;
+  height: 60px;
+  justify-content: center;
+  padding-left: 40px;
+  padding-right: 40px;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  font-size: 25px;
+}
+
+#btnEasy:hover {
+  box-shadow: rgba(76, 175, 80, 0.3) 0 4px 8px, rgba(76, 175, 80, 0.2) 0 7px 13px -3px, #c8e6c9 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+#btnEasy:active {
+  box-shadow: #c8e6c9 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+/* Moyen - Jaune */
+#btnMedium {
+  align-items: center;
+  appearance: none;
+  background-color: #fffde7;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: #fbc02d;
+  box-shadow: rgba(251, 192, 45, 0.2) 0 2px 4px, rgba(251, 192, 45, 0.15) 0 7px 13px -3px, #ffecb3 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #f57f17;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono", monospace;
+  height: 60px;
+  justify-content: center;
+  padding-left: 40px;
+  padding-right: 40px;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  font-size: 25px;
+}
+
+#btnMedium:hover {
+  box-shadow: rgba(251, 192, 45, 0.3) 0 4px 8px, rgba(251, 192, 45, 0.2) 0 7px 13px -3px, #ffecb3 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+#btnMedium:active {
+  box-shadow: #ffecb3 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+/* Difficile - Rouge */
+#btnHard {
+  align-items: center;
+  appearance: none;
+  background-color: #ffebee;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: #e53935;
+  box-shadow: rgba(229, 57, 53, 0.2) 0 2px 4px, rgba(229, 57, 53, 0.15) 0 7px 13px -3px, #ffcdd2 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #b71c1c;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono", monospace;
+  height: 60px;
+  justify-content: center;
+  padding-left: 40px;
+  padding-right: 40px;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  font-size: 25px;
+}
+
+#btnHard:hover {
+  box-shadow: rgba(229, 57, 53, 0.3) 0 4px 8px, rgba(229, 57, 53, 0.2) 0 7px 13px -3px, #ffcdd2 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+#btnHard:active {
+  box-shadow: #ffcdd2 0 3px 7px inset;
+  transform: translateY(2px);
+}
