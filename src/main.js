@@ -13,29 +13,60 @@ function displayQuiz(questionsList) {
     const quizContainer = document.getElementById("quiz");
     quizContainer.innerHTML = "";
 
+    const backSessionBtn = document.createElement("button");
+    backSessionBtn.id = "btnBackSession";
+    backSessionBtn.textContent = "Retour";
+    backSessionBtn.addEventListener("click", () => {
+        quizContainer.innerHTML = "";
+        quizOptions.style.display = "flex";
+        document.body.style.overflow = "hidden";
+    });
+
+    quizContainer.appendChild(backSessionBtn);
+
     questionsList.forEach((q, index) => {
         const questionElement = document.createElement("div");
         questionElement.classList.add("question");
 
-        let optionsHTML = "";
-        q.options.forEach((option) => {
-            optionsHTML += `
-                <label>
-                    <input type="radio" name="q${index}" value="${option}">
-                    ${option}
-                </label><br>
-            `;
+        const questionText = document.createElement("p");
+        questionText.innerHTML = `<strong>Question ${index + 1} :</strong> ${q.question}`;
+        questionElement.appendChild(questionText);
+
+        if (q.image) {
+            const img = document.createElement("img");
+            img.src = `./assets/${q.image}`; 
+            img.alt = "Illustration de la question";
+            img.classList.add("question-image");
+            questionElement.appendChild(img);
+        }
+
+        const answersContainer = document.createElement("div");
+        answersContainer.classList.add("answers");
+
+        q.options.forEach((option, optionIndex) => {
+            const inputId = `q${index}a${optionIndex}`; // Générer un id unique
+
+            const input = document.createElement("input");
+            input.type = "radio";
+            input.name = `q${index}`;
+            input.value = option;
+            input.id = inputId; // Assigner l'id
+
+            const label = document.createElement("label");
+            label.setAttribute("for", inputId); // Lier le label à l'input
+            label.textContent = option;
+
+            answersContainer.appendChild(input);
+            answersContainer.appendChild(label);
         });
 
-        questionElement.innerHTML = `
-            <p><strong>Question ${index + 1}:</strong> ${q.question}</p>
-            ${optionsHTML}
-        `;
+        questionElement.appendChild(answersContainer);
         quizContainer.appendChild(questionElement);
     });
 
     const submitBtn = document.createElement("button");
     submitBtn.textContent = "Valider";
+    submitBtn.id = "validateBtn";
     submitBtn.addEventListener("click", checkAnswers);
     quizContainer.appendChild(submitBtn);
 }
@@ -116,18 +147,22 @@ document.addEventListener("DOMContentLoaded", () => {
         changeBackground(0xaee370, 0xfcf8f1, "#cfeca6");
     });
 
+    function startQuiz(difficulty, color, bgColor, textColor) {
+        document.body.style.overflow = "auto"; // Autoriser le scroll
+        quizOptions.style.display = "none";
+        displayQuiz(getRandomQuestions(difficulty));
+        changeBackground(color, bgColor, textColor);
+    }
+
     document.getElementById("btnEasy").addEventListener("click", () => {
-        displayQuiz(getRandomQuestions("easy"));
-        changeBackground(0x6fe374, 0xf1fcf1, "#71e376");
+        startQuiz("easy", 0x6fe374, 0xf1fcf1, "#71e376");
     });
 
     document.getElementById("btnMedium").addEventListener("click", () => {
-        displayQuiz(getRandomQuestions("medium"));
-        changeBackground(0xe3e06f, 0xfcfbf1, "#e6e27d");
+        startQuiz("medium", 0xe3e06f, 0xfcfbf1, "#e6e27d");
     });
 
     document.getElementById("btnHard").addEventListener("click", () => {
-        displayQuiz(getRandomQuestions("hard"));
-        changeBackground(0xe36f6f, 0xfcf1f1, "#e68080");
+        startQuiz("hard", 0xe36f6f, 0xfcf1f1, "#e68080");
     });
 });

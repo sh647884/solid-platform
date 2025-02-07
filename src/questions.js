@@ -1,5 +1,6 @@
 export const questions = {
     easy: [
+        { question: "Quelle est cette forme ?", options: ["Carré", "Cercle", "Triangle"], answer: "Carré", image: "square.jpg" }, // test avec image
         { question: "Lorem ipsum dolor sit amet?", options: ["A", "B", "C", "D"], answer: "A" },
         { question: "Consectetur adipiscing elit?", options: ["A", "B", "C"], answer: "B" },
         { question: "Sed do eiusmod tempor?", options: ["A", "B"], answer: "A" },

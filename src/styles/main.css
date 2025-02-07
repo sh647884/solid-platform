@@ -15,11 +15,11 @@ body {
 }
 
 #background {
-  position: absolute;
+  position: fixed; /* Fixer le fond */
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   z-index: -1;
 }
 
@@ -232,4 +232,99 @@ h1:hover {
 #btnHard:active {
   box-shadow: #ffcdd2 0 3px 7px inset;
   transform: translateY(2px);
+}
+
+/* Style global des questions */
+.question {
+  width: 80vw;
+  margin: 20px auto;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.question-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 10px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style des propositions de réponse */
+.answers {
+  display: grid;
+  grid-template-columns: 40vw 40vw;
+}
+
+/* Cacher les boutons radio */
+.question input[type="radio"] {
+  display: none;
+}
+
+.question>p {
+  padding: 10px;
+  border: 2px solid hsl(0deg 0% 0% / 50%);
+  border-radius: 8px;
+}
+
+/* Style normal des réponses */
+.question label {
+  display: block;
+  padding: 10px;
+  margin: 5px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* Changer la couleur du label sélectionné */
+.question input[type="radio"]:checked + label {
+  background: #5cdb95; /* Couleur sélectionnée */
+  color: white;
+  font-weight: bold;
+}
+
+.question label:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* Fixer les boutons de retour et validation */
+#btnBackSession,
+#validateBtn {
+  position: fixed;
+  top: 20px;
+  height: 50px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 1;
+}
+
+#btnBackSession {
+  left: 20px;
+  background: #e36f6f;
+  color: white;
+}
+
+#validateBtn {
+  right: 20px;
+  background: #6fe374;
+  color: white;
+}
+
+/* Effet hover sur les boutons "Retour" et "Valider" */
+#btnBackSession:hover,
+#validateBtn:hover {
+  filter: brightness(90%);
+  transform: scale(1.05);
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
