@@ -8,7 +8,7 @@ export const questions = {
                 "B) Systematic Design Principle", 
                 "C) Software Reliability Principle", 
                 "D) Strong Encapsulation Principle"
-            ], 
+            ],
             answer: "A" 
         },
         { 
@@ -66,8 +66,7 @@ export const questions = {
             options: [
                 "A) Les classes doivent être ouvertes à la modification.", 
                 "B) Les classes doivent être fermées à l'extension.", 
-                "C) Les classes doivent être ouvertes à l'extension mais fermées à la modification.", 
-                "D) Les classes doivent être fermées à la modification et à l'extension."
+                "C) Les classes doivent être ouvertes à l'extension mais fermées à la modification.",
             ], 
             answer: "C" 
         },
@@ -94,40 +93,8 @@ export const questions = {
         { 
             question: "Pourquoi le principe de responsabilité unique est-il important ?", 
             options: [
-                "A) Il simplifie le code en limitant le nombre de classes", 
-                "B) Il évite que des classes aient trop de responsabilités", 
-                "C) Il empêche d'utiliser des interfaces", 
-                "D) Il permet d'avoir une seule classe pour tout gérer"
-            ], 
-            answer: "B" 
-        },
-        { 
-            question: "Quel principe encourage l'utilisation de l'abstraction plutôt que de dépendre directement de classes concrètes ?", 
-            options: [
-                "A) Principe de substitution de Liskov", 
-                "B) Principe d'inversion des dépendances", 
-                "C) Principe de responsabilité unique", 
-                "D) Principe de l'ouverture/fermeture"
-            ], 
-            answer: "B" 
-        },
-        { 
-            question: "Quel est l'objectif principal du principe de substitution de Liskov ?", 
-            options: [
-                "A) Une classe dérivée doit pouvoir remplacer sa classe mère sans modifier le comportement du programme", 
-                "B) Une classe mère ne doit jamais être héritée", 
-                "C) Les classes doivent être finales", 
-                "D) Une classe fille ne peut pas ajouter de nouvelles fonctionnalités"
-            ], 
-            answer: "A" 
-        },
-        { 
-            question: "Que signifie le 'I' dans SOLID ?", 
-            options: [
-                "A) Inversion des dépendances", 
-                "B) Interface Segregation Principle", 
-                "C) Injection de dépendances", 
-                "D) Instanciation dynamique"
+                "A) Il empêche d'utiliser des interfaces", 
+                "B) Il évite que des classes aient trop de responsabilités",
             ], 
             answer: "B" 
         },
@@ -144,10 +111,9 @@ export const questions = {
         { 
             question: "Pourquoi le principe de ségrégation des interfaces est-il utile ?", 
             options: [
-                "A) Il évite aux classes d'implémenter des méthodes inutiles", 
-                "B) Il oblige une classe à implémenter toutes les méthodes d'une interface", 
-                "C) Il supprime complètement l'utilisation des interfaces", 
-                "D) Il interdit l'héritage"
+                "A) Il évite aux classes d'implémenter des méthodes inutiles",
+                "B) Il supprime complètement l'utilisation des interfaces", 
+                "C) Il interdit l'héritage"
             ], 
             answer: "A" 
         },
@@ -172,36 +138,6 @@ export const questions = {
             answer: "C" 
         },
         { 
-            question: "Pourquoi le principe de responsabilité unique est-il essentiel dans le développement logiciel ?", 
-            options: [
-                "A) Il permet de regrouper plusieurs fonctionnalités dans une seule classe", 
-                "B) Il améliore la testabilité et la maintenance du code", 
-                "C) Il empêche d'utiliser des classes abstraites", 
-                "D) Il interdit l'héritage multiple"
-            ], 
-            answer: "B" 
-        },
-        { 
-            question: "Le principe de substitution de Liskov empêche :", 
-            options: [
-                "A) L'héritage entre classes", 
-                "B) Les erreurs causées par une mauvaise utilisation de l'héritage", 
-                "C) L'utilisation d'interfaces", 
-                "D) La création de classes abstraites"
-            ], 
-            answer: "B" 
-        },
-        { 
-            question: "Une classe qui viole le principe de responsabilité unique :", 
-            options: [
-                "A) A plusieurs raisons de changer", 
-                "B) Implémente trop d'interfaces", 
-                "C) Ne peut pas être instanciée", 
-                "D) Utilise une seule méthode"
-            ], 
-            answer: "A" 
-        },
-        { 
             question: "Dans SOLID, pourquoi l'Open/Closed Principle est-il crucial ?", 
             options: [
                 "A) Il empêche d'ajouter de nouvelles fonctionnalités", 
@@ -222,7 +158,7 @@ export const questions = {
             answer: "A" 
         },
         { 
-            question: "Que se passe-t-il si une classe viole le principe de substitution de Liskov ?", 
+            question: "Que se passe-t-il si une classe enfreint le principe de substitution de Liskov ?", 
             options: [
                 "A) Elle ne peut pas être compilée", 
                 "B) Elle peut provoquer des erreurs en remplaçant une classe parent", 
@@ -232,7 +168,7 @@ export const questions = {
             answer: "B" 
         },
         { 
-            question: "Dans un bon design SOLID, les classes doivent :", 
+            question: "Les classes qui respectent SOLID doivent :", 
             options: [
                 "A) Avoir une seule responsabilité", 
                 "B) Être aussi grandes que possible", 
@@ -244,10 +180,9 @@ export const questions = {
         { 
             question: "Que signifie “fermé à la modification” dans l'Open/Closed Principle ?", 
             options: [
-                "A) Il est impossible de modifier une classe existante", 
+                "A) Une classe doit toujours être ouverte à la modification", 
                 "B) Une classe doit être modifiable uniquement par son créateur", 
-                "C) Une classe existante ne doit pas être modifiée directement mais étendue", 
-                "D) Une classe doit toujours être ouverte à la modification"
+                "C) Une classe existante ne doit pas être modifiée directement mais étendue",
             ], 
             answer: "C" 
         },
@@ -258,26 +193,6 @@ export const questions = {
                 "B) Que les interfaces doivent être adaptées aux besoins spécifiques des classes", 
                 "C) Que toutes les classes doivent avoir la même interface", 
                 "D) Que les interfaces ne doivent pas contenir plus d'une méthode"
-            ], 
-            answer: "B" 
-        },
-        { 
-            question: "Que permet d'éviter l'application du principe d'inversion des dépendances ?", 
-            options: [
-                "A) La dépendance directe aux classes concrètes", 
-                "B) L'utilisation des interfaces", 
-                "C) L'instanciation dynamique des objets", 
-                "D) L'organisation en modules"
-            ], 
-            answer: "A" 
-        },
-        { 
-            question: "Pourquoi le principe SOLID est-il recommandé ?", 
-            options: [
-                "A) Pour compliquer le code et empêcher la modification", 
-                "B) Pour améliorer la structure et la maintenabilité du code", 
-                "C) Pour interdire l'héritage", 
-                "D) Pour rendre le code plus difficile à comprendre"
             ], 
             answer: "B" 
         },
@@ -293,15 +208,156 @@ export const questions = {
         }
     ],    
     medium: [
-        { question: "Ut enim ad minim veniam?", options: ["A", "B", "C", "D"], answer: "C" },
-        { question: "Quis nostrud exercitation ullamco?", options: ["A", "B", "C"], answer: "B" },
-        { question: "Laboris nisi ut aliquip ex ea?", options: ["A", "B"], answer: "A" },
-        { question: "Commodo consequat?", options: ["A", "B", "C", "D"], answer: "D" }
+        { 
+            question: "Quel principe encourage l'utilisation de l'abstraction plutôt que de dépendre directement de classes concrètes ?", 
+            options: [
+                "A) Principe de substitution de Liskov", 
+                "B) Principe d'inversion des dépendances", 
+                "C) Principe de responsabilité unique", 
+                "D) Principe de l'ouverture/fermeture"
+            ], 
+            answer: "B" 
+        },
+        { 
+            "question": "Quel problème peut apparaître si une classe ne respecte pas le principe de substitution de Liskov ?", 
+            "options": [
+                "A) Une sous-classe pourrait ne pas se comporter comme la classe mère attendue", 
+                "B) Le code sera trop court et difficile à comprendre", 
+                "C) Il deviendra impossible d'utiliser l'héritage", 
+                "D) Les objets ne pourront plus être instanciés"
+            ], 
+            "answer": "A" 
+        },
+        { 
+            question: "Que se passe-t-il si une classe a trop de responsabilités ?", 
+            options: [
+                "A) Elle devient plus facile à tester", 
+                "B) Elle est plus difficile à modifier sans affecter plusieurs parties du code", 
+                "C) Elle est plus performante", 
+                "D) Elle respecte mieux les principes SOLID"
+            ], 
+            answer: "B" 
+        },
+        { 
+            question: "Pourquoi le principe SOLID est-il recommandé ?", 
+            options: [
+                "A) Pour compliquer le code et empêcher la modification", 
+                "B) Pour interdire l'héritage", 
+                "C) Pour rendre le code plus difficile à comprendre",
+                "D) Pour améliorer la structure et la maintenabilité du code", 
+            ], 
+            answer: "D" 
+        },
+        { 
+            question: "Que permet d'éviter l'application du principe d'inversion des dépendances ?", 
+            options: [
+                "A) La dépendance directe aux classes concrètes", 
+                "B) L'utilisation des interfaces", 
+                "C) L'instanciation dynamique des dépendances d'objets",
+            ], 
+            answer: "A" 
+        },
+        { 
+            question: "Le principe de substitution de Liskov empêche :", 
+            options: [
+                "A) L'héritage entre classes", 
+                "B) L'utilisation d'interfaces", 
+                "C) Les erreurs causées par une mauvaise utilisation de l'héritage", 
+                "D) La création de classes abstraites"
+            ], 
+            answer: "C" 
+        },
+        { 
+            "question": "Pourquoi l'utilisation excessive de l'héritage peut-elle poser problème dans le cadre des principes SOLID ?", 
+            "options": [
+                "A) Parce qu'elle viole le principe de responsabilité unique", 
+                "B) Parce qu'elle peut mener à un couplage trop fort entre les classes", 
+                "C) Parce qu'elle empêche l'utilisation de classes abstraites", 
+                "D) Parce qu'elle interdit l'utilisation de polymorphisme"
+            ], 
+            "answer": "B" 
+        },
+        { 
+            "question": "Un développeur décide de modifier une classe existante pour ajouter une nouvelle fonctionnalité. Quel principe pourrait être enfreint ?", 
+            "options": [
+                "A) Le principe de l'inversion des dépendances", 
+                "B) Le principe de substitution de Liskov", 
+                "C) Le principe de l'ouverture/fermeture", 
+                "D) Le principe de responsabilité unique"
+            ], 
+            "answer": "C" 
+        },
+        { 
+            "question": "Quel problème principal peut survenir lorsqu'on ne respecte pas le principe d'inversion des dépendances ?", 
+            "options": [
+                "A) Le code devient plus flexible et modulaire", 
+                "B) La maintenance du code devient plus difficile en raison du couplage fort aux classes concrètes", 
+                "C) Il devient impossible d'instancier des objets", 
+                "D) On ne peut plus utiliser de classes abstraites"
+            ], 
+            "answer": "B" 
+        },
+        { 
+            "question": "Quel principe est le plus utile pour réduire les effets négatifs d'un couplage fort entre les classes ?", 
+            "options": [
+                "A) Le principe de l'inversion des dépendances", 
+                "B) Le principe de substitution de Liskov", 
+                "C) Le principe de responsabilité unique", 
+                "D) Le principe de l'ouverture/fermeture"
+            ], 
+            "answer": "A" 
+        },
     ],
     hard: [
-        { question: "Duis aute irure dolor in reprehenderit?", options: ["A", "B", "C", "D"], answer: "C" },
-        { question: "In voluptate velit esse cillum?", options: ["A", "B", "C"], answer: "A" },
-        { question: "Dolore eu fugiat nulla pariatur?", options: ["A", "B"], answer: "B" },
-        { question: "Excepteur sint occaecat cupidatat non?", options: ["A", "B", "C", "D"], answer: "D" }
+        { 
+            question: "Pourquoi le principe de responsabilité unique est-il essentiel dans le développement logiciel ?", 
+            options: [
+                "A) Il permet de regrouper plusieurs fonctionnalités dans une seule classe", 
+                "B) Il améliore la testabilité et la maintenance du code", 
+                "C) Il empêche d'utiliser des classes abstraites", 
+                "D) Il interdit l'héritage multiple"
+            ], 
+            answer: "B" 
+        },
+        { 
+            question: "Quel est l'objectif principal du principe de substitution de Liskov ?", 
+            options: [
+                "A) Une classe dérivée doit pouvoir remplacer sa classe mère sans modifier le comportement du programme", 
+                "B) Une classe mère ne doit jamais être héritée", 
+                "C) Les classes doivent être finales", 
+                "D) Une classe fille ne peut pas ajouter de nouvelles fonctionnalités"
+            ], 
+            answer: "A" 
+        },
+        { 
+            question: "Quelle modification respecte le principe Open/Closed (O) ?", 
+            options: [
+                "A) Ajouter une condition if dans une classe existante pour gérer un nouveau cas", 
+                "B) Modifier une classe pour gérer un nouvel algorithme sans toucher au reste du code", 
+                "C) Hériter d'une classe et surcharger une méthode existante", 
+                "D) Ajouter une nouvelle classe qui implémente une interface existante"
+            ], 
+            answer: "D" 
+        },
+        { 
+            question: "Quelle solution respecte le principe de Ségrégation des Interfaces (I) ?", 
+            options: [
+                "A) Remplacer une grosse interface par plusieurs petites interfaces spécifiques", 
+                "B) Ajouter plus de méthodes à une interface existante pour couvrir plus de cas", 
+                "C) Supprimer les interfaces et utiliser uniquement des classes abstraites", 
+                "D) Imposer aux classes l'implémentation d'une interface complète, même si elles n'utilisent pas toutes ses méthodes"
+            ], 
+            answer: "A" 
+        },
+        { 
+            question: "Quelle affirmation est fausse concernant les principes SOLID ?", 
+            options: [
+                "A) Ils favorisent un code plus modulaire et évolutif", 
+                "B) Ils permettent d'éliminer complètement le couplage entre classes", 
+                "C) Ils aident à concevoir des systèmes plus faciles à maintenir", 
+                "D) Ils réduisent le risque d'effets de bord lors des modifications"
+            ], 
+            answer: "B" 
+        },
     ]
 };
