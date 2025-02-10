@@ -78,8 +78,28 @@ function checkAnswers() {
     selectedAnswers.forEach((answer) => {
         const questionIndex = parseInt(answer.name.replace("q", ""), 10);
         const correctAnswer = currentQuestions[questionIndex].answer;
-        if (answer.value.startsWith(correctAnswer)) {
+        const questionElement = document.querySelectorAll(".question")[questionIndex];
+        const answerLabels = questionElement.querySelectorAll("label");
+
+        let isCorrect = false;
+        answerLabels.forEach((label) => {
+            if (label.textContent.startsWith(correctAnswer)) {
+                label.style.backgroundColor = "rgba(113, 227, 118, 0.5)"; // Vert pour la bonne réponse
+            }
+            if (label.textContent === answer.value) {
+                if (answer.value.startsWith(correctAnswer)) {
+                    isCorrect = true;
+                } else {
+                    label.style.backgroundColor = "rgba(230, 128, 128, 0.5)"; // Rouge pour la mauvaise réponse
+                }
+            }
+        });
+
+        if (isCorrect) {
             score++;
+            questionElement.querySelector("p").style.backgroundColor = "rgba(113, 227, 118, 0.8)"; // Vert pour question bien répondu
+        } else {
+            questionElement.querySelector("p").style.backgroundColor = "rgba(230, 128, 128, 0.8)"; // Rouge pour question mal répondu
         }
     });
 
