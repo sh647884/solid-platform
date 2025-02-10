@@ -112,6 +112,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const title = document.querySelector("h1");
     const backIcon = btnBack.querySelector("svg path");
 
+    const pdfContainer = document.getElementById("pdfContainer");
+    const btnClosePdf = document.getElementById("btnClosePdf");
+    const pdfViewer = document.getElementById("pdfViewer");
+
     function changeBackground(color, bgColor, textColor) {
         effect.destroy();
         effect = VANTA.NET({
@@ -133,6 +137,18 @@ document.addEventListener("DOMContentLoaded", () => {
         title.style.color = textColor;
         backIcon.setAttribute("fill", textColor);
     }
+
+    btnCours.addEventListener("click", () => {
+        pdfContainer.style.display = "flex"; // Affiche le PDF
+        document.body.style.overflow = "hidden"; // Empêche le défilement de la page pendant que le PDF est affiché
+        pdfViewer.src = "./assets/cours.pdf"; // Charge le PDF
+    });
+
+    btnClosePdf.addEventListener("click", () => {
+        pdfContainer.style.display = "none";
+        document.body.style.overflow = "auto"; // Défilement de la page
+        pdfViewer.src = "";
+    });
 
     btnQuizz.addEventListener("click", () => {
         buttonsBox.style.display = "none";
