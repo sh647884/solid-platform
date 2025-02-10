@@ -265,9 +265,10 @@ h1:hover {
 }
 
 .question>p {
-  padding: 10px;
+  padding: 18px;
   border: 2px solid hsl(0deg 0% 0% / 50%);
   border-radius: 8px;
+  font-size: 20px;
 }
 
 /* Style normal des réponses */
