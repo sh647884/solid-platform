@@ -5,7 +5,7 @@ let currentQuestions = [];
 function getRandomQuestions(difficulty) {
     let selectedQuestions = [...questions[difficulty]];
     selectedQuestions.sort(() => Math.random() - 0.5);
-    return selectedQuestions.slice(0, 20);
+    return selectedQuestions.slice(0, 10);
 }
 
 function displayQuiz(questionsList) {
@@ -78,7 +78,7 @@ function checkAnswers() {
     selectedAnswers.forEach((answer) => {
         const questionIndex = parseInt(answer.name.replace("q", ""), 10);
         const correctAnswer = currentQuestions[questionIndex].answer;
-        if (answer.value === correctAnswer) {
+        if (answer.value.startsWith(correctAnswer)) {
             score++;
         }
     });
@@ -111,8 +111,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const quizContainer = document.getElementById("quiz");
     const title = document.querySelector("h1");
     const backIcon = btnBack.querySelector("svg path");
+    const questionText = document.querySelectorAll("div.question > p");
 
-    function changeBackground(color, bgColor, textColor) {
+    function changeBackground(color, bgColor, textColor, qstnBgColor) {
         effect.destroy();
         effect = VANTA.NET({
             el: "#background",
@@ -129,9 +130,13 @@ document.addEventListener("DOMContentLoaded", () => {
             maxDistance: 27.0,
             spacing: 17.0,
         });
-
+    
         title.style.color = textColor;
         backIcon.setAttribute("fill", textColor);
+    
+        document.querySelectorAll("div.question > p").forEach((q) => {
+            q.style.backgroundColor = qstnBgColor;
+        });
     }
 
     btnQuizz.addEventListener("click", () => {
@@ -147,22 +152,22 @@ document.addEventListener("DOMContentLoaded", () => {
         changeBackground(0xaee370, 0xfcf8f1, "#cfeca6");
     });
 
-    function startQuiz(difficulty, color, bgColor, textColor) {
+    function startQuiz(difficulty, color, bgColor, textColor, qstnBgColor) {
         document.body.style.overflow = "auto"; // Autoriser le scroll
         quizOptions.style.display = "none";
         displayQuiz(getRandomQuestions(difficulty));
-        changeBackground(color, bgColor, textColor);
+        changeBackground(color, bgColor, textColor, qstnBgColor);
     }
 
     document.getElementById("btnEasy").addEventListener("click", () => {
-        startQuiz("easy", 0x6fe374, 0xf1fcf1, "#71e376");
+        startQuiz("easy", 0x6fe374, 0xf1fcf1, "#71e376", "#71e37680");
     });
 
     document.getElementById("btnMedium").addEventListener("click", () => {
-        startQuiz("medium", 0xe3e06f, 0xfcfbf1, "#e6e27d");
+        startQuiz("medium", 0xe3e06f, 0xfcfbf1, "#e6e27d", "#e6e27d80");
     });
 
     document.getElementById("btnHard").addEventListener("click", () => {
-        startQuiz("hard", 0xe36f6f, 0xfcf1f1, "#e68080");
+        startQuiz("hard", 0xe36f6f, 0xfcf1f1, "#e68080", "#e6808080");
     });
 });
