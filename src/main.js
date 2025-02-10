@@ -53,7 +53,7 @@ function displayQuiz(questionsList) {
             input.id = inputId; // Assigner l'id
 
             const label = document.createElement("label");
-            label.setAttribute("for", inputId); // Lier le label à l'input
+            label.setAttribute("for", inputId); // lier le label à l'input
             label.textContent = option;
 
             answersContainer.appendChild(input);
@@ -80,28 +80,38 @@ function checkAnswers() {
         const correctAnswer = currentQuestions[questionIndex].answer;
         const questionElement = document.querySelectorAll(".question")[questionIndex];
         const answerLabels = questionElement.querySelectorAll("label");
+        const answerInputs = questionElement.querySelectorAll("input[type=radio]");
 
         let isCorrect = false;
         answerLabels.forEach((label) => {
             if (label.textContent.startsWith(correctAnswer)) {
-                label.style.backgroundColor = "rgba(113, 227, 118, 0.5)"; // Vert pour la bonne réponse
+                label.style.backgroundColor = "rgba(113, 227, 118, 0.5)"; // vert pour la bonne réponse
             }
             if (label.textContent === answer.value) {
                 if (answer.value.startsWith(correctAnswer)) {
                     isCorrect = true;
                 } else {
-                    label.style.backgroundColor = "rgba(230, 128, 128, 0.5)"; // Rouge pour la mauvaise réponse
+                    label.style.backgroundColor = "rgba(230, 128, 128, 0.5)"; // rouge pour la mauvaise réponse
                 }
             }
         });
 
+        // désactiver les inputs pour empêcher toute nouvelle sélection
+        answerInputs.forEach(input => input.disabled = true);
+
         if (isCorrect) {
             score++;
-            questionElement.querySelector("p").style.backgroundColor = "rgba(113, 227, 118, 0.8)"; // Vert pour question bien répondu
+            questionElement.querySelector("p").style.backgroundColor = "rgba(113, 227, 118, 0.8)"; // vert pour question bien répondu
         } else {
-            questionElement.querySelector("p").style.backgroundColor = "rgba(230, 128, 128, 0.8)"; // Rouge pour question mal répondu
+            questionElement.querySelector("p").style.backgroundColor = "rgba(230, 128, 128, 0.8)"; // rouge pour question mal répondu
         }
     });
+
+    // désactiver le bouton de validation après la soumission
+    const submitBtn = document.getElementById("validateBtn");
+    submitBtn.disabled = true;
+    submitBtn.style.opacity = "0.5";
+    submitBtn.style.cursor = "not-allowed";
 
     alert(`Votre score : ${score}/${currentQuestions.length}`);
 }

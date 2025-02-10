@@ -286,7 +286,7 @@ h1:hover {
 
 /* Changer la couleur du label sélectionné */
 .question input[type="radio"]:checked + label {
-  background: #5cdb95; /* Couleur sélectionnée */
+  background: #3c5dc1; /* Couleur sélectionnée */
   color: white;
   font-weight: bold;
 }
