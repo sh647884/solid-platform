@@ -103,8 +103,7 @@ export const questions = {
             options: [
                 "A) Principe de responsabilité unique", 
                 "B) Principe d'inversion des dépendances", 
-                "C) Principe de substitution de Liskov", 
-                "D) Principe de ségrégation des interfaces"
+                "C) Principe de substitution de Liskov"
             ], 
             answer: "B" 
         },
@@ -116,16 +115,6 @@ export const questions = {
                 "C) Il interdit l'héritage"
             ], 
             answer: "A" 
-        },
-        { 
-            question: "Le principe d'inversion des dépendances recommande de :", 
-            options: [
-                "A) Toujours utiliser l'héritage pour structurer le code", 
-                "B) Éviter l'utilisation d'interfaces", 
-                "C) Rendre les modules de haut niveau indépendants des modules de bas niveau", 
-                "D) Dépendre directement des classes concrètes"
-            ], 
-            answer: "C" 
         },
         { 
             question: "Quel est le principal avantage de l'application des principes SOLID ?", 
@@ -219,14 +208,14 @@ export const questions = {
             answer: "B" 
         },
         { 
-            "question": "Quel problème peut apparaître si une classe ne respecte pas le principe de substitution de Liskov ?", 
-            "options": [
+            question: "Quel problème peut apparaître si une classe ne respecte pas le principe de substitution de Liskov ?", 
+            options: [
                 "A) Une sous-classe pourrait ne pas se comporter comme la classe mère attendue", 
                 "B) Le code sera trop court et difficile à comprendre", 
                 "C) Il deviendra impossible d'utiliser l'héritage", 
                 "D) Les objets ne pourront plus être instanciés"
             ], 
-            "answer": "A" 
+            answer: "A" 
         },
         { 
             question: "Que se passe-t-il si une classe a trop de responsabilités ?", 
@@ -268,44 +257,54 @@ export const questions = {
             answer: "C" 
         },
         { 
-            "question": "Pourquoi l'utilisation excessive de l'héritage peut-elle poser problème dans le cadre des principes SOLID ?", 
-            "options": [
+            question: "Pourquoi l'utilisation excessive de l'héritage peut-elle poser problème dans le cadre des principes SOLID ?", 
+            options: [
                 "A) Parce qu'elle viole le principe de responsabilité unique", 
                 "B) Parce qu'elle peut mener à un couplage trop fort entre les classes", 
                 "C) Parce qu'elle empêche l'utilisation de classes abstraites", 
                 "D) Parce qu'elle interdit l'utilisation de polymorphisme"
             ], 
-            "answer": "B" 
+            answer: "B" 
         },
         { 
-            "question": "Un développeur décide de modifier une classe existante pour ajouter une nouvelle fonctionnalité. Quel principe pourrait être enfreint ?", 
-            "options": [
+            question: "Un développeur décide de modifier une classe existante pour ajouter une nouvelle fonctionnalité. Quel principe pourrait être enfreint ?", 
+            options: [
                 "A) Le principe de l'inversion des dépendances", 
                 "B) Le principe de substitution de Liskov", 
                 "C) Le principe de l'ouverture/fermeture", 
                 "D) Le principe de responsabilité unique"
             ], 
-            "answer": "C" 
+            answer: "C" 
         },
         { 
-            "question": "Quel problème principal peut survenir lorsqu'on ne respecte pas le principe d'inversion des dépendances ?", 
-            "options": [
+            question: "Quel problème principal peut survenir lorsqu'on ne respecte pas le principe d'inversion des dépendances ?", 
+            options: [
                 "A) Le code devient plus flexible et modulaire", 
                 "B) La maintenance du code devient plus difficile en raison du couplage fort aux classes concrètes", 
                 "C) Il devient impossible d'instancier des objets", 
                 "D) On ne peut plus utiliser de classes abstraites"
             ], 
-            "answer": "B" 
+            answer: "B" 
         },
         { 
-            "question": "Quel principe est le plus utile pour réduire les effets négatifs d'un couplage fort entre les classes ?", 
-            "options": [
+            question: "Quel principe est le plus utile pour réduire les effets négatifs d'un couplage fort entre les classes ?", 
+            options: [
                 "A) Le principe de l'inversion des dépendances", 
                 "B) Le principe de substitution de Liskov", 
                 "C) Le principe de responsabilité unique", 
                 "D) Le principe de l'ouverture/fermeture"
             ], 
-            "answer": "A" 
+            answer: "A" 
+        },
+        { 
+            question: "Le principe d'inversion des dépendances recommande de :", 
+            options: [
+                "A) Toujours utiliser l'héritage pour structurer le code", 
+                "B) Éviter l'utilisation d'interfaces", 
+                "C) Rendre les modules de haut niveau indépendants des modules de bas niveau", 
+                "D) Dépendre directement des classes concrètes"
+            ], 
+            answer: "C" 
         },
     ],
     hard: [
