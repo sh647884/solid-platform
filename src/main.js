@@ -2,10 +2,89 @@ import { questions } from "./questions.js";
 
 let currentQuestions = [];
 
+function getMixedQuestions() {
+    let easyQuestions = [...questions.easy].sort(() => Math.random() - 0.5).slice(0, 7);
+    let mediumQuestions = [...questions.medium].sort(() => Math.random() - 0.5).slice(0, 5);
+    let hardQuestions = [...questions.hard].sort(() => Math.random() - 0.5).slice(0, 3);
+
+    return [...easyQuestions, ...mediumQuestions, ...hardQuestions].sort(() => Math.random() - 0.5);
+}
+
 function getRandomQuestions(difficulty) {
     let selectedQuestions = [...questions[difficulty]];
     selectedQuestions.sort(() => Math.random() - 0.5);
     return selectedQuestions.slice(0, 10);
+}
+
+function displayGeneralQuiz(questionsList) {
+    currentQuestions = questionsList;
+    const quizContainer = document.getElementById("quiz");
+    quizContainer.innerHTML = "";
+
+    const backSessionBtn = document.createElement("button");
+    backSessionBtn.id = "btnBackSession";
+    backSessionBtn.textContent = "Retour";
+    backSessionBtn.addEventListener("click", () => {
+        quizContainer.innerHTML = "";
+        quizOptions.style.display = "flex";
+        document.body.style.overflow = "hidden";
+    });
+
+    quizContainer.appendChild(backSessionBtn);
+
+    questionsList.forEach((q, index) => {
+        const questionElement = document.createElement("div");
+        questionElement.classList.add("question");
+
+        const questionText = document.createElement("p");
+        questionText.innerHTML = `<strong>Question ${index + 1} :</strong> ${q.question}`;
+
+        // Déterminer la couleur de fond selon la difficulté de la question
+        let bgColor;
+        if (questions.easy.includes(q)) bgColor = "#71e37680"; // Vert pour facile
+        else if (questions.medium.includes(q)) bgColor = "#e6e27d80"; // Jaune pour moyen
+        else if (questions.hard.includes(q)) bgColor = "#e6808080"; // Rouge pour difficile
+
+        questionText.style.backgroundColor = bgColor;
+        questionElement.appendChild(questionText);
+
+        if (q.image) {
+            const img = document.createElement("img");
+            img.src = `./assets/${q.image}`;
+            img.alt = "Illustration de la question";
+            img.classList.add("question-image");
+            questionElement.appendChild(img);
+        }
+
+        const answersContainer = document.createElement("div");
+        answersContainer.classList.add("answers");
+
+        q.options.forEach((option, optionIndex) => {
+            const inputId = `q${index}a${optionIndex}`;
+
+            const input = document.createElement("input");
+            input.type = "radio";
+            input.name = `q${index}`;
+            input.value = option;
+            input.id = inputId;
+
+            const label = document.createElement("label");
+            label.setAttribute("for", inputId);
+            label.textContent = option;
+
+            answersContainer.appendChild(input);
+            answersContainer.appendChild(label);
+        });
+
+        questionElement.appendChild(answersContainer);
+        quizContainer.appendChild(questionElement);
+    });
+
+    const submitBtn = document.createElement("button");
+    submitBtn.textContent = "Valider";
+    submitBtn.id = "validateBtn";
+    submitBtn.addEventListener("click", checkAnswers);
+    quizContainer.appendChild(submitBtn);
 }
 
 function displayQuiz(questionsList) {
@@ -137,6 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnCours = document.getElementById("btnCours");
     const buttonsBox = document.getElementById("buttonsBox");
     const quizOptions = document.getElementById("quizOptions");
+    const btnGeneral = document.getElementById("btnGeneral");
     const btnBack = document.getElementById("btnBack");
     const quizContainer = document.getElementById("quiz");
     const title = document.querySelector("h1");
@@ -197,6 +277,13 @@ document.addEventListener("DOMContentLoaded", () => {
         quizContainer.innerHTML = "";
         changeBackground(0xaee370, 0xfcf8f1, "#cfeca6");
     });
+
+    btnGeneral.addEventListener("click", () => {
+        document.body.style.overflow = "auto";
+        quizOptions.style.display = "none";
+        displayGeneralQuiz(getMixedQuestions());
+        changeBackground(0xaee370, 0xfcf8f1, "#cfeca6"); // Remettre les couleurs par défaut
+    });    
 
     function startQuiz(difficulty, color, bgColor, textColor, qstnBgColor) {
         document.body.style.overflow = "auto"; // Autoriser le scroll

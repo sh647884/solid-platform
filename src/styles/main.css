@@ -234,6 +234,40 @@ h1:hover {
   transform: translateY(2px);
 }
 
+/* Général - Bleu */
+#btnGeneral {
+  align-items: center;
+  appearance: none;
+  background-color: #e3f2fd;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: #1e88e5;
+  box-shadow: rgba(30, 136, 229, 0.2) 0 2px 4px, rgba(30, 136, 229, 0.15) 0 7px 13px -3px, #bbdefb 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #0d47a1;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono", monospace;
+  height: 60px;
+  justify-content: center;
+  padding-left: 40px;
+  padding-right: 40px;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  font-size: 25px;
+}
+
+#btnGeneral:hover {
+  box-shadow: rgba(30, 136, 229, 0.3) 0 4px 8px, rgba(30, 136, 229, 0.2) 0 7px 13px -3px, #bbdefb 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+#btnGeneral:active {
+  box-shadow: #bbdefb 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
 /* Style global des questions */
 .question {
   width: 80vw;
